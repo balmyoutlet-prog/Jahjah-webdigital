@@ -4,6 +4,8 @@
 **Scope:** Full audit of the existing system before any production changes, per the standing engineering process (audit → plan → branch → implement → test → review → PR → verify → deploy).
 **Status:** Audit complete. No production code changed in this pass.
 
+**2026-08-23 update — GitHub connection re-verified, P0 blocked:** Before starting P0 implementation, re-checked whether `jahjah-global-vision` is connected to this repo. It is **not**. `git ls-remote origin` shows this repo contains only the audit commit added in this session — none of the Lovable project's commits (latest known commit `d04d4b76...`) have ever landed here. The Lovable MCP tool surface available to this session has no GitHub-repo-sync action — `list_connectors`/`add_connector` cover third-party service integrations used *by* the app (Stripe, Supabase, etc.), not the project-level GitHub sync, which Lovable only exposes as a human action in the editor (Project → Settings → GitHub). Per explicit instruction, P0 implementation is **paused** until a human connects the project to `balmyoutlet-prog/Jahjah-webdigital` from the Lovable editor. See the reply in this session for the exact steps.
+
 ---
 
 ## 1. What actually exists today (ground truth)
