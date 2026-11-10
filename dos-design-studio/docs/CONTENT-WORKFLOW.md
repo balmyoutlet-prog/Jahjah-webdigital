@@ -43,3 +43,8 @@ The reel's GPU transitions (`src/components/ReelGL.tsx`) cycle through: Liquid g
 
 ## Style explorer imagery
 The 24 styles currently use generated material studies, labelled "Inspiration palettes — not completed DOS projects". To use photographs, add licensed images at `public/styles/<id>.jpg` and set `image` on the style in `src/content/styles.ts`.
+
+## Studio film (motion)
+`public/film/dos-studio-film-{1080,720}.{mp4,webm}` is a 32s 1:1 film made in **Picsart Media Studio** (renders are free of credits) from the opening and closing cards in `public/film/` and the 12 feed posts. Each shot has a slow camera move, and the cuts use shape reveals (circle and arc shapes drawn from the DOS logo), an iris, blur dissolves and zoom-throughs. No AI-generated footage is involved, so nothing in the spaces is invented.
+To remake it with full-resolution originals: replace the post images, redeploy, then re-export the same scene in Picsart and re-encode with ffmpeg (H.264 CRF 25 plus VP9 WebM, `+faststart`, no audio).
+**Higgsfield** (AI image-to-video) is set up but needs credits: about 7.5 credits per 5s Kling 3.0 clip, and the account currently has 0.5.

@@ -8,6 +8,7 @@ import { FEED } from "@/content/instagram";
 import { TRANSITIONS } from "./ReelGL";
 import { track } from "@/lib/analytics";
 import Reels from "./Reels";
+import StudioFilm from "./StudioFilm";
 
 const ReelGL = dynamic(() => import("./ReelGL"), { ssr: false });
 const HOLD = 4200; // ms each image stays before the next transition
@@ -101,6 +102,7 @@ export default function Work({ t, locale }: { t: Dictionary["work"]; locale: Loc
             ))}
           </ul>
         </div>
+        <StudioFilm t={t} />
         <Reels t={t} />
       </div>
     </section>
