@@ -1,6 +1,11 @@
 # Deployment — dos.jahjahwebdigital.com
 
-**Nothing in this document has been executed.** It requires owner approval before any step that creates a project, changes DNS, or publishes.
+**Status (approved by the owner, 10 Nov 2026):** step 1 is done. Vercel project `dos-design-studio` (team *jahjah*, root directory `dos-design-studio`, linked to this repo) is created and built successfully.
+- Unlisted preview: https://dos-design-studio-lime.vercel.app (no login; `noindex`, robots blocked, preview ribbon on)
+- Protected aliases (Vercel login): `dos-design-studio-jahjah.vercel.app`, `dos-design-studio-git-claude-wonderful-davinci-zqitdx-jahjah.vercel.app`
+- Every push to the branch rebuilds the DOS project automatically.
+
+**Not done (still needs approval):** step 2, which means adding `dos.jahjahwebdigital.com` to the project and creating the `dos` CNAME at Name.com. Then turning off preview mode.
 
 ## What was verified (read-only, 10 Nov 2026)
 
