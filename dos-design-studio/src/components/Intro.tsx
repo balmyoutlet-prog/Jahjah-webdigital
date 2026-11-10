@@ -38,8 +38,8 @@ export default function Intro({ skipLabel }: { skipLabel: string }) {
         <path className="ln l2" d="M60 250 V70 H460 V250" />
         <path className="ln l3" d="M140 250 V130 H380 V250 M260 70 V250" />
         <g className="mark">
-          <text x="260" y="205" textAnchor="middle" fontFamily="var(--f-display), serif" fontSize="76" letterSpacing="18" fill="#121212">DOS</text>
-          <text x="260" y="290" textAnchor="middle" fontFamily="var(--f-sans), sans-serif" fontSize="11" letterSpacing="7" fill="#6f6a62">DESIGN STUDIO</text>
+          <rect x="70" y="64" width="380" height="174" fill="#fbfaf8" />
+          <image href="/brand/dos-logo.png" x="95" y="68" width="330" height="162" />
         </g>
       </svg>
       {!out && (

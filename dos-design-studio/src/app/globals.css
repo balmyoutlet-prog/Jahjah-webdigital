@@ -16,6 +16,10 @@
   --glass: rgba(255, 255, 255, 0.55);
   --glass-edge: rgba(255, 255, 255, 0.9);
   --ok: #2f5d4a;
+  /* DOS brand green, sampled from the official logo strokes */
+  --dos-green: #1b5e34;
+  --dos-green-deep: #143d25;
+  --dos-green-soft: rgba(27, 94, 52, 0.1);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --gutter: clamp(16px, 4vw, 56px);
   --max: 1440px;
@@ -131,10 +135,9 @@ html[lang="ar"] .mobile-menu a { font-weight: 300; font-size: clamp(30px, 8vw, 4
 }
 
 /* ───────────── Logo (typographic placeholder until original files arrive) ───────────── */
-.logo { display: inline-flex; align-items: baseline; gap: 10px; text-decoration: none; }
-.logo .word { font-family: var(--f-display), serif; font-size: 26px; letter-spacing: .18em; line-height: 1; }
-.logo .sub { font-family: var(--f-sans), sans-serif; font-size: 9.5px; letter-spacing: .32em; text-transform: uppercase; color: var(--mute); }
-@media (max-width: 520px) { .logo .sub { display: none; } }
+.logo { display: inline-flex; align-items: center; text-decoration: none; line-height: 0; }
+.logo img { display: block; }
+@media (max-width: 520px) { .nav .logo img { height: 24px !important; } }
 
 /* ───────────── Hero ───────────── */
 .hero { position: relative; height: 230vh; }
@@ -423,3 +426,42 @@ html[dir="rtl"] .reel-progress { transform-origin: right; }
 @keyframes vtIn { from { opacity: 0; filter: blur(14px) brightness(1.15); transform: scale(.985); } }
 @media (prefers-reduced-motion: reduce) { ::view-transition-old(root), ::view-transition-new(root) { animation: none; } }
 .nav .logo { view-transition-name: dos-logo; }
+
+/* ───────────── DOS brand accent (from the logo: green-to-black strokes, thin construction lines) ───────────── */
+::selection { background: var(--dos-green); color: #fff; }
+.index-row::after { background: linear-gradient(90deg, var(--dos-green) 0, var(--dos-green) 48px, var(--line) 48px); height: 1px; }
+html[dir="rtl"] .index-row::after { background: linear-gradient(270deg, var(--dos-green) 0, var(--dos-green) 48px, var(--line) 48px); }
+.global .index-row::after { background: linear-gradient(90deg, #4f9a6b 0, #4f9a6b 48px, rgba(255,255,255,.14) 48px); }
+.note::before { background: var(--dos-green); }
+.btn:not(.ghost):hover { background: linear-gradient(120deg, var(--dos-green) 0%, var(--ink) 70%); border-color: var(--dos-green); }
+.wa-btn { --b: var(--dos-green); }
+.wa-btn:hover { background: var(--dos-green-deep) !important; }
+.reel-progress { background: linear-gradient(90deg, var(--dos-green), var(--ink)); }
+.inq-steps li.on { border-color: var(--dos-green); }
+.exp-tab[aria-selected="true"], .chip-btn[aria-pressed="true"], .intent[aria-pressed="true"] { background: linear-gradient(120deg, var(--dos-green-deep), var(--ink) 75%); border-color: var(--ink); }
+.wall-item button[aria-current="true"] { outline-color: var(--dos-green); }
+.plan-steps li.on b { color: var(--dos-green); }
+.logo-full img { max-width: 100%; }
+
+/* ───────────── Reels (click-to-load Instagram player) ───────────── */
+.reels { margin-top: clamp(56px, 7vw, 100px); }
+.reels-head { display: flex; justify-content: space-between; align-items: end; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+.reels-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 320px)); gap: clamp(12px, 2vw, 24px); }
+.reel-card { position: relative; aspect-ratio: 9 / 15; border-radius: 6px; overflow: hidden; background: #fff; border: 1px solid var(--line); }
+.reel-card iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #fff; }
+.reel-facade { position: absolute; inset: 0; width: 100%; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; padding: 20px; border: 0; cursor: pointer; text-align: start; background:
+  radial-gradient(120% 70% at 30% 20%, #fff 0%, rgba(255,255,255,0) 60%),
+  linear-gradient(160deg, #f4f1eb 0%, #e6e0d5 60%, #d9cdb9 100%); overflow: hidden; }
+.reel-facade::before { content: ""; position: absolute; inset: 14px; border: 1px solid rgba(18,18,18,.12); pointer-events: none; }
+.reel-facade .arc { position: absolute; width: 140%; aspect-ratio: 1; border-radius: 50%; border: 14px solid transparent; border-top-color: var(--dos-green); border-left-color: var(--ink); top: 34%; left: -20%; opacity: .9; transform: rotate(-20deg); transition: transform 1.4s var(--ease); }
+.reel-facade .arc.thin { border-width: 1px; border-color: transparent; border-bottom-color: var(--ink); border-right-color: var(--ink); top: 30%; left: -10%; width: 120%; opacity: .5; }
+.reel-facade:hover .arc { transform: rotate(10deg); }
+.reel-facade:hover .arc.thin { transform: rotate(-30deg); }
+.reel-facade .k { position: relative; }
+.reel-facade .mark { position: relative; height: 34px; width: auto; align-self: flex-start; opacity: .9; }
+.reel-facade .mid { position: relative; display: grid; gap: 14px; }
+.reel-facade .play { position: relative; display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 999px; background: var(--ink); color: #fff; font-size: 13.5px; transition: background .3s; }
+.reel-facade:hover .play { background: var(--dos-green); }
+.reels-note { font-size: 12.5px; color: var(--mute); margin: 12px 0 0; }
+@media (max-width: 760px) { .reels-grid { grid-auto-flow: column; grid-auto-columns: 78%; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; } .reels-grid li { scroll-snap-align: start; } }
+@media (prefers-reduced-motion: reduce) { .reel-facade .arc { transition: none; } }

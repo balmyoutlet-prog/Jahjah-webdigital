@@ -126,7 +126,7 @@ const en = {
       role: "Architecture & Planning",
       bio: "Leads the studio's architectural planning, design coordination and architectural services — from early concepts and floor plans to facades and drawings.",
       expertise: ["Architectural planning", "Design coordination", "Floor plans", "Facade concepts", "Architectural drawings"],
-      cta: "Speak with our architect",
+      cta: "Speak with Shahinaz",
     },
     interiors: {
       role: "Interior Architecture & Design",
@@ -140,7 +140,7 @@ const en = {
         "Furniture and lighting concepts",
         "Interior styling and design consultation",
       ],
-      cta: "Consult our interior designer",
+      cta: "Speak with Dima",
     },
   },
   styles: {
@@ -174,6 +174,10 @@ const en = {
     reel: "Reel",
     show: "Show in reel",
     instagram: "See the studio on Instagram",
+    reelsTitle: "Reels from the studio",
+    reelsAll: "All reels on Instagram",
+    playReel: "Play reel",
+    reelsNote: "Reels play in Instagram's own player, which loads only after you press play.",
   },
   global: {
     index: "07 — Global",
@@ -244,7 +248,7 @@ const en = {
     budgets: ["Prefer to discuss", "Under USD 50k", "USD 50k – 150k", "USD 150k – 500k", "Above USD 500k"],
     timelines: ["Immediately", "Within 3 months", "3 – 6 months", "6 – 12 months", "Just exploring"],
     who: "Your project spans architecture and interiors. Who would you like to speak with first?",
-    whoArch: "Shinaz — Architecture",
+    whoArch: "Shahinaz Jahjah — Architecture",
     whoInt: "Dima Jahjah — Interiors",
     routedTo: "You'll be connected with",
     general: "DOS Design Studio",
@@ -259,6 +263,8 @@ const en = {
     tagline: "Spaces with purpose. Design without limits.",
     rights: "All rights reserved.",
     follow: "Follow",
+    architecture: "Architecture",
+    interiors: "Interiors",
   },
 };
 
@@ -388,7 +394,7 @@ const ar: Dictionary = {
       role: "العمارة والتخطيط",
       bio: "تتولّى التخطيط المعماري وتنسيق التصميم والخدمات المعمارية في الاستوديو — من المفاهيم الأولى والمخطّطات إلى الواجهات والرسومات.",
       expertise: ["التخطيط المعماري", "تنسيق التصميم", "المخطّطات", "مفاهيم الواجهات", "الرسومات المعمارية"],
-      cta: "تحدّث مع مهندستنا",
+      cta: "تحدّث مع شاهيناز",
     },
     interiors: {
       role: "العمارة والتصميم الداخلي",
@@ -402,7 +408,7 @@ const ar: Dictionary = {
         "مفاهيم الأثاث والإضاءة",
         "التنسيق الداخلي والاستشارات",
       ],
-      cta: "استشر مصمّمتنا الداخلية",
+      cta: "تحدّث مع ديما",
     },
   },
   styles: {
@@ -436,6 +442,10 @@ const ar: Dictionary = {
     reel: "ريل",
     show: "اعرض في الشريط",
     instagram: "تابع الاستوديو على إنستغرام",
+    reelsTitle: "ريلز من الاستوديو",
+    reelsAll: "كلّ الريلز على إنستغرام",
+    playReel: "شغّل الريل",
+    reelsNote: "تُعرض الريلز عبر مشغّل إنستغرام نفسه، ولا يُحمَّل إلّا بعد الضغط على تشغيل.",
   },
   global: {
     index: "٠٧ — حضورنا",
@@ -506,7 +516,7 @@ const ar: Dictionary = {
     budgets: ["أفضّل المناقشة", "أقلّ من ٥٠ ألف دولار", "٥٠ – ١٥٠ ألف دولار", "١٥٠ – ٥٠٠ ألف دولار", "أكثر من ٥٠٠ ألف دولار"],
     timelines: ["فوراً", "خلال ٣ أشهر", "٣ – ٦ أشهر", "٦ – ١٢ شهراً", "أستكشف فقط"],
     who: "يجمع مشروعك بين العمارة والتصميم الداخلي. مع من تودّ التحدّث أولاً؟",
-    whoArch: "شيناز — العمارة",
+    whoArch: "شاهيناز جحجاح — العمارة",
     whoInt: "ديما جحجاح — التصميم الداخلي",
     routedTo: "سيتمّ توصيلك مع",
     general: "استوديو DOS للتصميم",
@@ -521,6 +531,8 @@ const ar: Dictionary = {
     tagline: "مساحات ذات غاية. تصميم بلا حدود.",
     rights: "جميع الحقوق محفوظة.",
     follow: "تابعنا",
+    architecture: "العمارة",
+    interiors: "التصميم الداخلي",
   },
 };
 

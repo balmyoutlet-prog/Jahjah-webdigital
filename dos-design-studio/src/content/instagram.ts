@@ -23,3 +23,6 @@ export const FEED: FeedPost[] = [
   { src: "/instagram/post-11.jpg", kind: "post", caption: { en: "Café counter", ar: "كاونتر مقهى" } },
   { src: "/instagram/post-12.jpg", kind: "post", caption: { en: "Kitchen with marble island", ar: "مطبخ بجزيرة رخامية" } },
 ];
+
+/** Reels shared by the owner. IDs only — tracking parameters from share links are dropped. */
+export const REELS: string[] = ["Dbsv76aA4Ya", "DWekXrkgDI7", "DWRyHnNgFxj"];

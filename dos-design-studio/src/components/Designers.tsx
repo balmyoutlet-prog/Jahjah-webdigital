@@ -6,8 +6,8 @@ import { openInquiry } from "@/lib/inquiryBus";
 
 export default function Designers({ t, locale }: { t: Dictionary["designers"]; locale: "en" | "ar" }) {
   const people = [
-    { key: "interiors" as const, m: TEAM.interiors, c: t.interiors, nameAr: "ديما جحجاح", intent: "interior-architecture" as const },
-    { key: "architecture" as const, m: TEAM.architecture, c: t.architecture, nameAr: "شيناز", intent: "architectural-design" as const },
+    { key: "interiors" as const, m: TEAM.interiors, c: t.interiors, nameAr: TEAM.interiors.nameAr, intent: "interior-architecture" as const },
+    { key: "architecture" as const, m: TEAM.architecture, c: t.architecture, nameAr: TEAM.architecture.nameAr, intent: "architectural-design" as const },
   ];
   return (
     <section id="designers" className="section" aria-labelledby="des-title" style={{ background: "var(--paper)" }}>

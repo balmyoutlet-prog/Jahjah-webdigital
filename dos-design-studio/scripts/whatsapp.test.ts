@@ -3,7 +3,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { routeIntent, resolveNumber, waLink, isValidWaNumber, buildMessage, INTENTS } from "../src/lib/whatsapp.ts";
 
-test("architecture intents route to Shinaz", () => {
+test("architecture intents route to Shahinaz Jahjah", () => {
   for (const k of ["architectural-design", "floor-plans", "villa-architecture", "exterior-facade"] as const)
     assert.equal(routeIntent(k), "architecture");
 });

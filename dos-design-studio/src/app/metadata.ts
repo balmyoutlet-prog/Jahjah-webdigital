@@ -27,7 +27,7 @@ export function buildMetadata(locale: Locale): Metadata {
       images: [{ url: `/og/dos-og-${locale}.jpg`, width: 1200, height: 630, alt: t.ogAlt }],
     },
     twitter: { card: "summary_large_image", title: t.title, description: t.description, images: [`/og/dos-og-${locale}.jpg`] },
-    icons: { icon: "/brand/favicon.svg" },
+    icons: { icon: [{ url: "/brand/favicon.png", type: "image/png" }], apple: "/brand/apple-touch-icon.png" },
     // While in preview, keep search engines out even if a preview URL leaks.
     robots: PREVIEW_MODE ? { index: false, follow: false } : { index: true, follow: true },
     verification: GSC_VERIFICATION ? { google: GSC_VERIFICATION } : undefined,

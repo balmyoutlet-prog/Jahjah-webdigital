@@ -1,18 +1,13 @@
 # Content workflow
 
-## Logo (needed first)
-Instagram could not be accessed automatically (login wall / rate limit), so the site uses a **typographic placeholder** "DOS / Design Studio".
-Send the original logo as **SVG** (preferred) or a transparent PNG at 1000px+, in dark and light versions. Then:
-1. Put it in `public/brand/` (e.g. `dos-logo.svg`).
-2. Set `logoSrc: "/brand/dos-logo.svg"` in `src/lib/site.ts`.
-3. Also replace `public/brand/favicon.svg` and regenerate `public/og/dos-og-*.jpg`.
+## Logo
+Installed from the owner's artwork: `public/brand/dos-logo.png` (with "ARCHITECTURE & INTERIOR STUDIO") and `public/brand/dos-mark.png` (letters only), both with transparent backgrounds, plus `favicon.png` / `apple-touch-icon.png`. The brand green `--dos-green: #1b5e34` was sampled from the logo strokes. An original **SVG** of the logo would make it perfectly sharp at every size; drop it in `public/brand/` and point `BRAND.logoMark` / `BRAND.logoFull` in `src/lib/site.ts` to it.
 
 ## WhatsApp numbers
-Set in the Vercel project's environment variables (no code edit), digits only, country code first:
-`NEXT_PUBLIC_WA_ARCHITECTURE` (Shinaz), `NEXT_PUBLIC_WA_INTERIORS` (Dima Jahjah), `NEXT_PUBLIC_WA_GENERAL` (optional; falls back to interiors). Redeploy after changing.
+Configured: architecture → **Shahinaz Jahjah +961 70 684 195**, interiors → **Dima Jahjah +961 81 405 269** (defaults in `src/lib/site.ts`). To change them without a code edit, set `NEXT_PUBLIC_WA_ARCHITECTURE`, `NEXT_PUBLIC_WA_INTERIORS` or `NEXT_PUBLIC_WA_GENERAL` (optional; falls back to interiors) in the Vercel project and redeploy.
 
 Routing (`src/lib/whatsapp.ts`):
-- Architecture: Architectural Design, Floor Plans, Villa Architecture, Exterior / Facade Design → **Shinaz**
+- Architecture: Architectural Design, Floor Plans, Villa Architecture, Exterior / Facade Design → **Shahinaz Jahjah**
 - Interiors: Interior Architecture, Residential Interior, Commercial Interior → **Dima Jahjah**
 - Full Design Consultation, Project Supervision → visitor **chooses** who to contact first
 - Other Inquiry → general number
@@ -44,7 +39,7 @@ Only include fields the studio has confirmed (location, year, materials). Images
 ## Instagram feed (Work section)
 `src/content/instagram.ts` lists the 12 posts shown in the reel and post wall. They were cropped from the owner's screenshot of the profile grid, so they are about 390px source images upscaled for display. **Replace each `public/instagram/post-XX.jpg` with the original export (1600px+)**, keeping the same file names, and the reel sharpens automatically. Captions describe only what is visible. Verified project details belong in `projects.json`.
 
-The reel's GPU transitions (`src/components/ReelGL.tsx`) cycle through: Liquid glass, Light sweep, AI render, Sketch to render, Zoom through. To add or reorder posts, edit the `FEED` array. A live, auto-updating Instagram feed needs the account owner to connect Meta's official Instagram API. Until then the feed is curated by hand and is not presented as live.
+The reel's GPU transitions (`src/components/ReelGL.tsx`) cycle through: Liquid glass, Light sweep, AI render, Sketch to render, Zoom through. To add or reorder posts, edit the `FEED` array. Reels are listed by ID in `REELS` (same file) and play through Instagram's official embed only after the visitor presses play. A live, auto-updating Instagram feed needs the account owner to connect Meta's official Instagram API. Until then the feed is curated by hand and is not presented as live.
 
 ## Style explorer imagery
 The 24 styles currently use generated material studies, labelled "Inspiration palettes — not completed DOS projects". To use photographs, add licensed images at `public/styles/<id>.jpg` and set `image` on the style in `src/content/styles.ts`.

@@ -13,8 +13,10 @@ export const BRAND = {
   short: "DOS",
   instagram: "https://www.instagram.com/dos.designstudio",
   instagramHandle: "@dos.designstudio",
-  /** Set to the path of the original logo (e.g. "/brand/dos-logo.svg") once the owner supplies it. */
-  logoSrc: null as string | null,
+  tagline: "Architecture & Interior Studio",
+  /** Original DOS logo supplied by the owner (transparent PNGs cut from the official artwork). */
+  logoMark: "/brand/dos-mark.png", // "DOS" letterforms only — nav
+  logoFull: "/brand/dos-logo.png", // with "ARCHITECTURE & INTERIOR STUDIO" — intro, footer
 } as const;
 
 /** Digits only, international format, no leading "+" or "00". */
@@ -25,22 +27,25 @@ export function normalizePhone(raw: string | undefined | null): string {
   return d;
 }
 
+// Public studio WhatsApp numbers supplied by the owner. Environment variables override them without a code change.
 export const WHATSAPP = {
-  architecture: normalizePhone(process.env.NEXT_PUBLIC_WA_ARCHITECTURE),
-  interiors: normalizePhone(process.env.NEXT_PUBLIC_WA_INTERIORS),
+  architecture: normalizePhone(process.env.NEXT_PUBLIC_WA_ARCHITECTURE || "+961 70 684 195"), // Shahinaz Jahjah
+  interiors: normalizePhone(process.env.NEXT_PUBLIC_WA_INTERIORS || "+961 81 405 269"), // Dima Jahjah
   general: normalizePhone(process.env.NEXT_PUBLIC_WA_GENERAL),
 };
 
 export const TEAM = {
   architecture: {
     key: "architecture" as const,
-    name: "Shinaz",
-    confirmed: false, // full name, title and qualifications to be confirmed by the studio
-    photo: "/team/architect-portrait.jpg",
+    name: "Shahinaz Jahjah",
+    nameAr: "شاهيناز جحجاح",
+    confirmed: true, // name and discipline confirmed by the owner; qualifications not yet supplied, so none are stated
+    photo: "/team/shahinaz-jahjah.jpg",
   },
   interiors: {
     key: "interiors" as const,
     name: "Dima Jahjah",
+    nameAr: "ديما جحجاح",
     confirmed: true,
     photo: "/team/dima-jahjah.jpg",
   },

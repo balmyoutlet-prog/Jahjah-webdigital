@@ -8,20 +8,22 @@ Automated access returned a login wall / HTTP 429. The owner then supplied a scr
 
 ## Verified (supplied by the owner)
 - Dima Jahjah: Interior Architecture & Design graduate; biography text as supplied; portrait (black outfit).
-- Shinaz: handles architecture inquiries (WhatsApp routing).
+- Shahinaz Jahjah: architecture (WhatsApp +961 70 684 195). Dima Jahjah: interior design (WhatsApp +961 81 405 269).
+- Official logo: "DOS — Architecture & Interior Studio" (green/black strokes), supplied by the owner and installed.
+- Reels: three reel links supplied and embedded (click-to-load).
 - Second portrait (white outfit): the architecture/planning professional.
 - Markets: Lebanon, Saudi Arabia (Riyadh, Jeddah), UAE (Dubai), Qatar (Doha).
 - Canonical domain: dos.jahjahwebdigital.com.
 
 ## Proposed: needs studio confirmation before launch
-- Second designer's **full name**, title, qualifications and responsibilities (shown as "Shinaz — Architecture & Planning", labelled pending).
+- Shahinaz Jahjah's **title and qualifications** (the site states only her discipline, Architecture & Planning, and her responsibilities).
 - Full **services list** (33 services across Architecture / Interior Architecture / Specialized). Labelled "proposed".
 - Remote consultation and project supervision as offered services.
 - Budget ranges in the inquiry form (USD bands).
 
 ## Missing: please supply
-1. Original DOS logo files (SVG/PNG, dark and light).
-2. WhatsApp numbers: Shinaz, Dima, optional general.
+1. Optional: the logo as SVG for perfect sharpness (PNG version is installed).
+2. Optional: a general WhatsApp number (general inquiries currently go to Dima).
 3. Portfolio: full-resolution originals of the 12 feed posts (same order), the reel videos, plus for each project: category, title, verified location, short description, materials.
 4. Preferred contact email (optional, for the privacy policy and structured data).
 5. Approval to create the Vercel project and add the `dos` DNS record.

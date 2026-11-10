@@ -1,5 +1,5 @@
 import { getDictionary, type Locale } from "@/content/dictionary";
-import { SITE_URL, BRAND, PREVIEW_MODE } from "@/lib/site";
+import { SITE_URL, BRAND, PREVIEW_MODE, TEAM, WHATSAPP } from "@/lib/site";
 import Intro, { introGuardScript } from "./Intro";
 import Nav from "./Nav";
 import Hero from "./Hero";
@@ -29,10 +29,19 @@ export default function HomePage({ locale }: { locale: Locale }) {
         name: BRAND.name,
         url: `${SITE_URL}/`,
         sameAs: [BRAND.instagram],
+        logo: `${SITE_URL}${BRAND.logoFull}`,
+        slogan: BRAND.tagline,
+        contactPoint: [
+          WHATSAPP.architecture && { "@type": "ContactPoint", contactType: "Architecture inquiries", telephone: `+${WHATSAPP.architecture}`, availableLanguage: ["en", "ar"] },
+          WHATSAPP.interiors && { "@type": "ContactPoint", contactType: "Interior design inquiries", telephone: `+${WHATSAPP.interiors}`, availableLanguage: ["en", "ar"] },
+        ].filter(Boolean),
         description: t.meta.description,
         areaServed: ["Lebanon", "Saudi Arabia", "United Arab Emirates", "Qatar"].map((name) => ({ "@type": "Country", name })),
         knowsAbout: ["Architecture", "Interior architecture", "Interior design", "Villa design", "Residential architecture"],
-        employee: [{ "@type": "Person", name: "Dima Jahjah", jobTitle: "Interior Architecture & Design" }],
+        employee: [
+          { "@type": "Person", name: TEAM.interiors.name, jobTitle: "Interior Architecture & Design" },
+          { "@type": "Person", name: TEAM.architecture.name, jobTitle: "Architecture" },
+        ],
       },
       { "@type": "WebSite", "@id": `${SITE_URL}/#website`, url: `${SITE_URL}/`, name: BRAND.name, inLanguage: ["en", "ar"], publisher: { "@id": `${SITE_URL}/#studio` } },
       { "@type": "WebPage", url, name: t.meta.title, inLanguage: locale, isPartOf: { "@id": `${SITE_URL}/#website` } },
@@ -57,7 +66,7 @@ export default function HomePage({ locale }: { locale: Locale }) {
         <GlobalMap t={t.global} />
         <Inquiry t={t.inquiry} locale={locale} />
       </main>
-      <Footer t={t.footer} nav={t.nav} />
+      <Footer t={t.footer} nav={t.nav} locale={locale} />
       {PREVIEW_MODE && <div className="preview-ribbon" role="note">{t.preview}</div>}
       <ClientInit />
       <Analytics locale={locale} />

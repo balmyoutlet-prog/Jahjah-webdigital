@@ -1,21 +1,14 @@
 import { BRAND } from "@/lib/site";
 
-/**
- * Typographic placeholder for the DOS wordmark. As soon as the studio supplies the original
- * logo file, set BRAND.logoSrc and this renders the authentic mark instead.
- */
-export default function Logo({ href = "#top" }: { href?: string }) {
+/** The original DOS logo. `full` adds the "Architecture & Interior Studio" line. */
+export default function Logo({ href = "#top", full = false, height }: { href?: string; full?: boolean; height?: number }) {
+  const h = height ?? (full ? 64 : 30);
+  const src = full ? BRAND.logoFull : BRAND.logoMark;
+  const ratio = full ? 656 / 323 : 656 / 241;
   return (
-    <a className="logo" href={href} aria-label={BRAND.name}>
-      {BRAND.logoSrc ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img src={BRAND.logoSrc} alt={BRAND.name} height={28} style={{ height: 28, width: "auto" }} />
-      ) : (
-        <>
-          <span className="word">DOS</span>
-          <span className="sub">Design Studio</span>
-        </>
-      )}
+    <a className={`logo${full ? " logo-full" : ""}`} href={href} aria-label={`${BRAND.name} — ${BRAND.tagline}`} dir="ltr">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={src} alt={`${BRAND.name}`} width={Math.round(h * ratio)} height={h} style={{ height: h, width: "auto" }} />
     </a>
   );
 }
