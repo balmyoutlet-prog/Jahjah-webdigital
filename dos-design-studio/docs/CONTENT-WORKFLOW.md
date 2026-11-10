@@ -45,6 +45,14 @@ The reel's GPU transitions (`src/components/ReelGL.tsx`) cycle through: Liquid g
 The 24 styles currently use generated material studies, labelled "Inspiration palettes — not completed DOS projects". To use photographs, add licensed images at `public/styles/<id>.jpg` and set `image` on the style in `src/content/styles.ts`.
 
 ## Studio film (motion)
-`public/film/dos-studio-film-{1080,720}.{mp4,webm}` is a 32s 1:1 film made in **Picsart Media Studio** (renders are free of credits) from the opening and closing cards in `public/film/` and the 12 feed posts. Each shot has a slow camera move, and the cuts use shape reveals (circle and arc shapes drawn from the DOS logo), an iris, blur dissolves and zoom-throughs. No AI-generated footage is involved, so nothing in the spaces is invented.
+`public/film/dos-studio-film-{1080,720}.{mp4,webm}` is a 32s 1:1 film made in **Picsart Media Studio** (renders are free of credits) from the opening and closing cards in `public/film/` and the 12 feed posts. Each shot is a **depth-parallax clip** (`public/film/depth/`, made by `scripts/depth_motion.py`): the open-source Depth Anything V2 model estimates per-pixel depth on this machine, with no paid credits, and the camera dollies, trucks, cranes or orbits so near objects move more than far ones. The cuts use shape reveals (circle and arc shapes drawn from the DOS logo), an iris, blur dissolves and zoom-throughs. The AI only measures depth; it never paints new pixels, so nothing in the spaces is invented.
 To remake it with full-resolution originals: replace the post images, redeploy, then re-export the same scene in Picsart and re-encode with ffmpeg (H.264 CRF 25 plus VP9 WebM, `+faststart`, no audio).
 **Higgsfield** (AI image-to-video) is set up but needs credits: about 7.5 credits per 5s Kling 3.0 clip, and the account currently has 0.5.
+
+To regenerate the depth clips from new originals:
+```bash
+python3 -m venv .venv && .venv/bin/pip install --index-url https://download.pytorch.org/whl/cpu torch
+.venv/bin/pip install transformers pillow numpy opencv-python-headless
+.venv/bin/python scripts/depth_motion.py public/instagram public/film/depth   # needs ffmpeg
+```
+(Descript AI video was tried as well: that account has no AI credits left. vidIQ's video generation needs images embedded as data, so it was not used.)
