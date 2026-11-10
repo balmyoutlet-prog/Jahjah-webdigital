@@ -5,7 +5,14 @@
 - Protected aliases (Vercel login): `dos-design-studio-jahjah.vercel.app`, `dos-design-studio-git-claude-wonderful-davinci-zqitdx-jahjah.vercel.app`
 - Every push to the branch rebuilds the DOS project automatically.
 
-**Not done (still needs approval):** step 2, which means adding `dos.jahjahwebdigital.com` to the project and creating the `dos` CNAME at Name.com. Then turning off preview mode.
+**Publish approved by the owner.** On Vercel, everything is done:
+- `dos.jahjahwebdigital.com` has been added to the project and verified.
+- Production has `NEXT_PUBLIC_PREVIEW_MODE=false`: no ribbon, pages indexable, `robots.txt` lists the sitemap. Previews and development keep `true`.
+- `*.vercel.app` hosts still send `X-Robots-Tag: noindex`, so there's no duplicate content.
+
+**The remaining step is at Name.com** (DNS is hosted there, so Vercel cannot create it):
+`CNAME  dos  →  b060640b93aef576.vercel-dns-017.com`  (TTL 300). Do not touch the existing `A @ 185.158.133.1` or any other record.
+Once it resolves, Vercel issues the HTTPS certificate automatically.
 
 ## What was verified (read-only, 10 Nov 2026)
 
