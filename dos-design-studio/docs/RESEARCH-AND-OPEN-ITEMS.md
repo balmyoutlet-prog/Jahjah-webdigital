@@ -4,7 +4,7 @@
 **DOS Design Studio** (per owner instruction; Instagram handle `@dos.designstudio`). Every reference uses DOS; the build contains no "DOZ". In Arabic the Latin "DOS" is kept (`استوديو DOS للتصميم`) because a transliteration (دوس) carries an unwanted meaning.
 
 ## Instagram (https://www.instagram.com/dos.designstudio)
-Automated access returned a login wall / HTTP 429, so **no logo, bio, posts or portfolio assets could be verified or extracted**. Nothing from Instagram has been reproduced on the site.
+Automated access returned a login wall / HTTP 429. The owner then supplied a screenshot of the profile grid: the account shows Instagram's verified badge, and its 12 most recent posts (interiors: bathroom, kitchens, living and dining rooms, MOWA Coffee Shop, a workspace reel, a café counter, a site in progress) are now used in the Work section's reel and wall. The logo and bio are still not visible to us.
 
 ## Verified (supplied by the owner)
 - Dima Jahjah: Interior Architecture & Design graduate; biography text as supplied; portrait (black outfit).
@@ -22,7 +22,7 @@ Automated access returned a login wall / HTTP 429, so **no logo, bio, posts or p
 ## Missing: please supply
 1. Original DOS logo files (SVG/PNG, dark and light).
 2. WhatsApp numbers: Shinaz, Dima, optional general.
-3. Portfolio: project photos, drawings, reels, plus for each project: category, title, verified location, short description, materials.
+3. Portfolio: full-resolution originals of the 12 feed posts (same order), the reel videos, plus for each project: category, title, verified location, short description, materials.
 4. Preferred contact email (optional, for the privacy policy and structured data).
 5. Approval to create the Vercel project and add the `dos` DNS record.
 6. Whether a DOS GA4 property should be created (and by whom).

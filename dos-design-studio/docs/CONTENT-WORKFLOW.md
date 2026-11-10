@@ -41,8 +41,10 @@ Only include fields the studio has confirmed (location, year, materials). Images
 
 **No-code admin (next phase):** the content files above are structured so a Git-backed CMS (e.g. Decap CMS or TinaCMS on this repo) can give the studio an upload form for projects, photos, reels and descriptions, with no hosting cost. This will be set up once the portfolio format is approved.
 
-## Instagram
-Linked from the Work section and footer. A live Instagram media wall needs the account owner to authorize Meta's official embed / Instagram API. No scraping, and nothing is presented as "real-time" until that is connected.
+## Instagram feed (Work section)
+`src/content/instagram.ts` lists the 12 posts shown in the reel and post wall. They were cropped from the owner's screenshot of the profile grid, so they are about 390px source images upscaled for display. **Replace each `public/instagram/post-XX.jpg` with the original export (1600px+)**, keeping the same file names, and the reel sharpens automatically. Captions describe only what is visible. Verified project details belong in `projects.json`.
+
+The reel's GPU transitions (`src/components/ReelGL.tsx`) cycle through: Liquid glass, Light sweep, AI render, Sketch to render, Zoom through. To add or reorder posts, edit the `FEED` array. A live, auto-updating Instagram feed needs the account owner to connect Meta's official Instagram API. Until then the feed is curated by hand and is not presented as live.
 
 ## Style explorer imagery
 The 24 styles currently use generated material studies, labelled "Inspiration palettes — not completed DOS projects". To use photographs, add licensed images at `public/styles/<id>.jpg` and set `image` on the style in `src/content/styles.ts`.

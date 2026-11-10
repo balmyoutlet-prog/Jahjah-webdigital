@@ -53,7 +53,7 @@ export default function HomePage({ locale }: { locale: Locale }) {
         <Expertise t={t.expertise} />
         <Designers t={t.designers} locale={locale} />
         <StyleExplorer t={t.styles} locale={locale} />
-        <Work t={t.work} />
+        <Work t={t.work} locale={locale} />
         <GlobalMap t={t.global} />
         <Inquiry t={t.inquiry} locale={locale} />
       </main>

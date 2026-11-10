@@ -1,10 +1,10 @@
 "use client";
 import { useEffect } from "react";
 
-/** Adds `.in` to every `.rv` / `.portrait` element once it scrolls into view. */
+/** Adds `.in` to every `.rv` / `.portrait` / `.mask` element once it scrolls into view. */
 export function useReveal() {
   useEffect(() => {
-    const els = Array.from(document.querySelectorAll<HTMLElement>(".rv, .portrait"));
+    const els = Array.from(document.querySelectorAll<HTMLElement>(".rv, .portrait, .mask"));
     if (!("IntersectionObserver" in window)) {
       els.forEach((e) => e.classList.add("in"));
       return;
