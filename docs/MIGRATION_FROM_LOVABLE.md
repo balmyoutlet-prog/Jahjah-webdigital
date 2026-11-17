@@ -31,6 +31,17 @@ Verified: `bun run typecheck` clean, `bun run build` passes (default + `VERCEL=1
 SSR smoke test of `/`, `/packages`, `/work`, `/restaurant`, `/ar`, `/contact`, `/auth`,
 `/sitemap.xml` all 200 with no browser console errors.
 
+## Progress log
+
+- 2026-11-17: TanStack Start bumped 1.168.32 → 1.168.61 — Vercel blocks the old version
+  (CVE-2026-102989, XSS).
+- 2026-11-17: First successful Vercel **preview** build of this repo in project `jahjahwebdigital`
+  (`dpl_6APmKXULFDowqBGiUBok4VRmZ7tE`): homepage SSR and local images return 200. Project build
+  settings are now framework `tanstack-start`, install `bun install`, build `bun run build`.
+  The domain was not touched.
+- 2026-11-17: Creating a Supabase project failed (free plan, 2-active-project limit). The owner
+  chose to upgrade the Supabase org to Pro.
+
 ## Still on Lovable (infrastructure cutover — pending owner decisions)
 
 1. **Database + auth users** — still the Lovable Cloud Supabase project `kmighupzxdtulaqzcgqn`
