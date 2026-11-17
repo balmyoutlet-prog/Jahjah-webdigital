@@ -1,0 +1,17 @@
+# Google Search
+User-agent: Googlebot
+Allow: /
+
+# Search and AI discovery
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: *
+Allow: /
+
+# Authenticated areas carry noindex metadata and remain crawlable so bots can see it.
+Sitemap: https://jahjahwebdigital.com/sitemap.xml
+
+# Crawl policy refreshed 2026-09-27
+
+# Growth publishing sync 2026-09-27

@@ -1,0 +1,296 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Jahjah WebDigital — Warm Premium Digital Studio design system.
+ * Warm ivory surfaces, deep charcoal-navy text, a restrained terracotta
+ * accent, editorial serif display type. All colors in oklch. Never
+ * hardcode colors in components — the whole app (site + platform) reskins
+ * from these tokens alone. A dark surface is used intentionally in exactly
+ * one place: the footer (see .footer-dark in SiteFooter).
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-champagne: var(--champagne);
+  --color-champagne-soft: var(--champagne-soft);
+  --color-ivory: var(--ivory);
+  --color-footer-bg: var(--footer-bg);
+  --color-footer-fg: var(--footer-fg);
+  --color-footer-muted: var(--footer-muted);
+  --color-footer-border: var(--footer-border);
+  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.985 0.016 25);
+  --foreground: oklch(0.27 0.026 20);
+  --surface: oklch(0.968 0.02 24);
+  --surface-2: oklch(0.94 0.03 24);
+  --card: oklch(0.985 0.016 25);
+  --card-foreground: oklch(0.27 0.026 20);
+  --popover: oklch(0.995 0.008 25);
+  --popover-foreground: oklch(0.27 0.026 20);
+  --primary: oklch(0.58 0.105 28);
+  --primary-foreground: oklch(0.995 0.008 25);
+  --secondary: oklch(0.94 0.03 24);
+  --secondary-foreground: oklch(0.27 0.026 20);
+  --muted: oklch(0.94 0.03 24);
+  --muted-foreground: oklch(0.47 0.035 20);
+  --accent: oklch(0.94 0.045 25);
+  --accent-foreground: oklch(0.33 0.05 22);
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(0.995 0.008 25);
+  --border: oklch(0.24 0.025 260 / 10%);
+  --input: oklch(0.24 0.025 260 / 12%);
+  --ring: oklch(0.6 0.14 42 / 45%);
+  --champagne: oklch(0.58 0.105 28);
+  --champagne-soft: oklch(0.68 0.12 48);
+  --ivory: oklch(0.985 0.016 25);
+  --footer-bg: oklch(0.95 0.028 24);
+  --footer-fg: oklch(0.27 0.026 20);
+  --footer-muted: oklch(0.47 0.035 20);
+  --footer-border: oklch(0.58 0.105 28 / 14%);
+  --gradient-glow: radial-gradient(
+    60% 60% at 50% 0%,
+    color-mix(in oklab, var(--champagne) 12%, transparent),
+    transparent 70%
+  );
+  --gradient-edge: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--foreground) 6%, transparent),
+    transparent
+  );
+  --shadow-lift: 0 24px 60px -32px oklch(0.3 0.03 50 / 0.22);
+  --shadow-soft: 0 2px 12px -2px oklch(0.3 0.03 50 / 0.08);
+  --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv01";
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--champagne) 22%, transparent);
+    color: var(--foreground);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--champagne);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+}
+
+@utility eyebrow {
+  font-size: 0.6875rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+@utility grain {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.12;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+  }
+}
+
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+@utility shadow-lift {
+  box-shadow: var(--shadow-lift);
+}
+
+/* The one intentionally dark section of the site — see brief: "a dark
+   footer is acceptable." Scopes its own tokens so children can keep using
+   text-foreground/text-muted-foreground/border-border and just work. */
+@utility footer-dark {
+  background: var(--footer-bg);
+  color: var(--footer-fg);
+  --background: var(--footer-bg);
+  --foreground: var(--footer-fg);
+  --muted-foreground: var(--footer-muted);
+  --border: var(--footer-border);
+}
+
+@utility glow-top {
+  background-image: var(--gradient-glow);
+}
+
+@utility hairline {
+  border-top: 1px solid var(--border);
+}
+
+@utility link-underline {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 1px;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: right;
+    background: currentColor;
+    transition: transform 0.5s var(--ease-lux);
+  }
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@utility reveal {
+  animation: rise 0.9s var(--ease-lux) both;
+}
+
+@utility marquee-track {
+  animation: marquee 38s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility input-luxe {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 0.7rem 0.9rem;
+  font-size: 0.875rem;
+  color: var(--foreground);
+  outline: none;
+  transition: border-color 0.25s var(--ease-lux);
+}
+
+@utility input-luxe-focus {
+  border-color: var(--champagne);
+}
+
+/* Browser-window chrome for desktop mockups. */
+@utility browser-frame {
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  background: var(--card);
+  box-shadow: var(--shadow-lift);
+  overflow: hidden;
+}
+
+@utility browser-frame-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+@utility browser-frame-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: var(--border);
+}
+
+/* Phone chrome for mobile mockups. */
+@utility phone-frame {
+  border-radius: 2.25rem;
+  border: 8px solid var(--foreground);
+  background: var(--foreground);
+  box-shadow: var(--shadow-lift);
+  overflow: hidden;
+}
